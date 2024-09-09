@@ -77,6 +77,7 @@ const Form = () => {
           Password
         </legend>
         <input
+          placeholder={formState.errors.password ? '8 chars minimum' : ''}
           type='text'
           id='password'
           {...register('password', {
@@ -95,7 +96,9 @@ const Form = () => {
         )}
       </fieldset>
 
-      <button type='submit'>Enviar!</button>
+      <button type='submit' disabled={!formState.isDirty}>
+        Enviar
+      </button>
     </form>
   )
 }
