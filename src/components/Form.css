@@ -1,0 +1,32 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 40px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.8);
+}
+.formulario > fieldset {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.formulario > fieldset > legend {
+  /* color: white; */
+  /* font-weight: bold; */
+  font-size: 12px;
+}
+
+.formulario > fieldset > input {
+  border-radius: 5px;
+  border: none;
+  height: 25px;
+}
