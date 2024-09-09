@@ -10,12 +10,11 @@
 }
 .formulario > fieldset {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-
   justify-content: space-between;
   align-items: flex-start;
 }
@@ -30,3 +29,13 @@
   border: none;
   height: 25px;
 }
+.formulario > fieldset > span {
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+}
+/* span {
+  color: red;
+  font-size: 10px;
+  font-weight: bold;
+} */

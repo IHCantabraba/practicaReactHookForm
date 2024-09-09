@@ -35,14 +35,66 @@ const Form = () => {
           id='usuario'
         />
       </fieldset>
-      <fieldset>
-        <legend>Email</legend>
-        <input type='text' id='email' />
+      <fieldset
+        style={{
+          border: formState.errors.email ? '2px solid red' : '1px solid gray'
+        }}
+      >
+        <legend
+          style={{
+            color: formState.errors.email ? 'red' : 'black',
+            fontWeight: formState.errors.email ? 'bold' : 'null'
+          }}
+        >
+          Email
+        </legend>
+        <input
+          placeholder='user@host.domain'
+          type='text'
+          id='email'
+          {...register('email', {
+            required: true,
+            pattern: {
+              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
+            }
+          })}
+        />
+        {formState.errors.email && (
+          <span>{formState.errors.email ? 'Enter a valid email' : ''}</span>
+        )}
       </fieldset>
-      <fieldset>
-        <legend>Password</legend>
-        <input type='text' id='password' />
+      <fieldset
+        style={{
+          border: formState.errors.password ? '2px solid red' : '1px solid gray'
+        }}
+      >
+        <legend
+          style={{
+            color: formState.errors.password ? 'red' : 'black',
+            fontWeight: formState.errors.password ? 'bold' : 'null'
+          }}
+        >
+          Password
+        </legend>
+        <input
+          type='text'
+          id='password'
+          {...register('password', {
+            required: true,
+            pattern: {
+              value: /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+            }
+          })}
+        />
+        {formState.errors.password && (
+          <span>
+            {formState.errors.email
+              ? '1-9 digit,lowercase & uppercase & 8 chars'
+              : ''}
+          </span>
+        )}
       </fieldset>
+
       <button type='submit'>Enviar!</button>
     </form>
   )
